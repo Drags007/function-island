@@ -1,4 +1,4 @@
-var hourglassAddress="TXf4eo6v5hKRJxY7gLzeyrb9oCdsJoq1zi";  // D1VS Contract
+var hourglassAddress="TQ66Wiihp8V8hHVwTr3a4Byog5CyEre6nM";  // D1VS Contract
 var hourglassContract;
 var dripFeederContract;
 var userTokenBalance;
