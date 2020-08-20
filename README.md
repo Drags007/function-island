@@ -32,4 +32,14 @@ If you would like to contribute to Function Island, feel free to make a Pull Req
  - Yet to be established, but there's probably a long line of people...
 
 ## Donations
- - We're not ready to take donations just yet - but thank you!
+If you would like to help the development of Function Island with a donation instead of a contribution, we'll graciously accept cryptocurrency to the following addresses:
+
+ - MrFunction:
+  - ETH: 0x67294f5F1d44c0de10e49f98553Dbd77dC7D73fD
+  - TRX: TEbqdbZdW18jXSa8cZbdb2BysNa8sKMuKP
+  
+ - Rinon:
+  - ETH: 0x8f0c400932752c56fdda403a0270bf637e6d7ec3
+  - TRX: TCheQUTzdeh8qcFS2E9ThhB8XZx2TjtQf8
+  
+ Please bear in mind that all donations are final - any cryptocurrencies received by these addresses will be used or spent as seen fit by the respective developer designated as owner of the address. No refunds will be issued for incorrect donation amounts.
