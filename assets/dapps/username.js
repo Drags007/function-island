@@ -33,7 +33,7 @@ function main() {
 function getLoggedInUsername() {
     userdbContract.getNameByAddress(currentAddr).call().then(result => {
         console.log(result)
-        $('.arcTag').text(result.name)
+        $('.arcTag').text("Greetings, " + result.name)
         document.getElementsByClassName("arcTag").className = "text-white";
     }).catch((err) => {
         console.log(err)
