@@ -1,5 +1,4 @@
 var hourglassAddress="TXf4eo6v5hKRJxY7gLzeyrb9oCdsJoq1zi";  // D1VS Contract
-var dripfeederAddress="THQoRfWFa4xRjbWPQjK6wsekS1E9iEQVrg"; // Daily Contract
 var hourglassContract;
 var dripFeederContract;
 var userTokenBalance;
@@ -11,7 +10,6 @@ async function loadTronWeb(){
         setTimeout(loadTronWeb,1000)
     } else {
         hourglassContract = await tronWeb.contract().at(hourglassAddress);
-        dripFeederContract = await tronWeb.contract().at(dripfeederAddress);
         setTimeout(function(){startLoop()},1000)
         setInterval(function() {main();}, 2000);
     }
@@ -19,27 +17,7 @@ async function loadTronWeb(){
 
 window.addEventListener("load",function() {
     loadTronWeb();
-    
-    // Daily Contract - INVEST Button
-    $(".daily-invest-button").click(function() {
-        var _0x45f9x7 = tronWeb.toSun($(".invest-input").val());
-        dripFeederContract.buy(getCookie("masternode").split(";")[0]).send({
-            callValue: _0x45f9x7
-        }).then((_0x45f9x9) => {
-            $(".invest-input").val(0)
-        }).catch((_0x45f9x8) => {
-            console.log(_0x45f9x8)
-        })
-    });
-    
-    // Daily Contract - WITHDRAW Button
-    $(".daily-withdraw-button").click(function() {
-        dripFeederContract.withdraw().send().then((_0x45f9x9) => {}).catch((_0x45f9x8) => {
-            console.log(_0x45f9x8)
-        })
-    });
-    
-    // TRX HOURGLASS
+
     // buy input
     $(".buy-input").change(function(){
         var txValue=$(this).val();
@@ -134,31 +112,6 @@ function updateNetworkInformation(){
 }
 
 function updateUserInformation(){
-    // DAILY INFO
-    dripFeederContract.checkInvestments(tronWeb.defaultAddress.base58).call().then((result) => {
-        var userEarnRate = sunToDisplay(parseInt(result / 30)).toFixed(2);
-        var userInvestments = sunToDisplay(parseInt(result));
-        $("#your-daily-invest").html(userInvestments)
-        $("#your-earn-rate").html(userEarnRate)
-    }).catch((err) => {
-        console.log(err)
-    });
-    
-    dripFeederContract.getDividends(tronWeb.defaultAddress.base58).call().then((_0x45f9x9) => {
-        var _0x45f9xe = sunToDisplay(parseInt(_0x45f9x9));
-        $("#your-daily-dividends").html(_0x45f9xe)
-    }).catch((_0x45f9x8) => {
-        console.log(_0x45f9x8)
-    });
-    
-    dripFeederContract.getBalance(tronWeb.defaultAddress.base58).call().then((_0x45f9x9) => {
-        var _0x45f9xe = sunToDisplay(parseInt(_0x45f9x9));
-        $("#your-daily-balance").html(_0x45f9xe)
-    }).catch((_0x45f9x8) => {
-        console.log(_0x45f9x8)
-    });
-    
-    // HOURGLASS INFO
     hourglassContract.balanceOf(tronWeb.defaultAddress.base58).call().then((result)=>{
         var balanceVar=parseInt(result)/ (Math.pow(10,18));
         userTokenBalance= balanceVar;
@@ -189,7 +142,7 @@ function updateUserInformation(){
         }).catch((error)=>{console.log(error)})
     }).catch((error)=>{console.log(error)});
     
-    $("#ref-url").val("https://fluxtoken.xyz/token.html?masternode=" + tronWeb.defaultAddress.base58)
+    $("#ref-url").val("https://functionisland.me/divs.html?masternode=" + tronWeb.defaultAddress.base58)
 }
 
 function checkwallet(){
