@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="FunctionDEX">
+        <meta name="author" content="Mr Function">
+        <title>FnTrade | DeFi on TRON</title>
+
+        <!-- Core CSS -->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/custom.css">
+
+        <!-- FontAwesome -->
+        <script src="https://kit.fontawesome.com/f352960784.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body class="text-white">
+        <nav class="navbar navbar-expand-lg navbar-dark blackNavbar fixed-top">
+            <a class="navbar-brand" href="index.html"><img src="assets/img/logo.png" width="25px" height="25px" class="rounded-circle" /> FunctionIsland</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarColor03">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"><a class="nav-link" href="token.html"><span><i class="fas fa-coins text-white"></i> TOKEN</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="divs.html"><span><i class="fas fa-hand-holding-usd text-white"></i> D1VS</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="exchange.html"><span><i class="fas fa-random text-white"></i> EXCHANGE</span></a></li>
+                </ul>
+                
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="https://tronscan.org/#/contract/TAEeGcFq2ACNbKHpmL55pJktt6qfWeZ1Uq" target="_blank"><i class="fas fa-search-dollar text-white"></i> <span>Contract</span></a></li>
+                </ul>
+            </div>
+        </nav>
+        <br />
+        <br />
+        <br />
+        
+        <div id="content" class="container">
+            <br />
+            <div class="row jumbotron glassPanel">
+                <div class="container">
+                    <div class="row text-center">
+                        <div class="col text-center">
+                            <img src="assets/img/logo.png" width="80px" height="80px" class="rounded-circle" />
+                            <h1 class="text-white">Function Island</h1>
+                            <p class="text-muted">USDJ/TRX Exchange Interface</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card glassPanel text-center">
+                        <div class="card-header glassPanel">My Wallet</div>
+                        <div class="card-body">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col">
+                                        <h4><span id="trxBuy" class="trxBalBuy"></span></h4>
+                                        <small>Your TRX</small>
+                                    </div>
+
+                                    <div class="col">
+                                        <h4><span class="USDJBalBuy"></span></h4>
+                                        <small>Your USDJ</small>
+                                    </div>
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                </div>
+                                    
+                <div class="col-md-6">
+                    <div class="card glassPanel text-center">
+                        <div class="card-header glassPanel">Liquidity Pool</div>
+                        <div class="card-body">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col">
+                                        <h4><span id="availTrxBuy" class="availableTrxBuy"></span></h4>
+                                        <small>TRX Liquidity</small>
+                                    </div>
+
+                                    <div class="col">
+                                        <h4><span id="availUsdBuy" class="availableUsdBuy"></span></h4>
+                                        <small>USDJ Liquidity</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                </div>
+            </div>
+            
+            <div id="bank" class="row">
+                <div class="col-md-6">
+                    <div class="card glassPanel text-left">
+                        <div class="card-header glassPanel">Buy USDJ</div>
+                        <div class="card-body">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col text-center">
+                                        <label>Send TRX</label>
+                                        <input type="number" class="form-control roundedCorners" id="bankBuyTrx" placeholder="100" value="100" maxlength="32" onkeyup="updateBankBuy(0)" onkeydown="updateBankBuy(0)" autocomplete="off" inputmode="numeric">
+                                        <p>Min. <span class="text-success">100 TRX</span></p><br />
+                                    </div>
+                                    
+                                    <div class="col text-center">
+                                        <label>Receive USDJ</label>
+                                        <input type="number" class="form-control roundedCorners" id="bankBuyUSDJ" placeholder="10" value="10" maxlength="32" onkeyup="updateBankBuy(1)" onkeydown="updateBankBuy(1)" autocomplete="off" inputmode="numeric"><p>Incl. <span class="text-danger">2&#37; Fee</span></p><br />
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col text-center">
+                                        <small><i>(Current Rate: <span class="ourBuyRate"></span> USDJ / 1 TRX)</i></small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer glassPanel">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col text-center">
+                                        <a id="buyTokensBtn" class="btn btn-lg btn-buy roundedCorners" onclick="bankBuy()" role="button">INSUFFICIENT FUNDS</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="card glassPanel text-left">
+                        <div class="card-header glassPanel">Sell USDJ</div>
+                        <div class="card-body">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col text-center">
+                                        <label>Send USDJ</label>
+                                        <input type="number" class="form-control roundedCorners" id="bankSellUSDJ" placeholder="10" value="10" maxlength="32" onkeyup="updateBankSell(0)" onkeydown="updateBankSell(0)" autocomplete="off" inputmode="numeric">
+                                        <p>Min. <span class="text-success">2 USDJ</span></p><br />
+                                    </div>
+                                    
+                                    <div class="col text-center">
+                                        <label>Receive TRX</label>
+                                        <input type="number" class="form-control roundedCorners" id="bankSellTrx" placeholder="100" value="100" maxlength="32" onkeyup="updateBankSell(1)" onkeydown="updateBankSell(1)" autocomplete="off" inputmode="numeric"><p>Incl. <span class="text-danger">2&#37; Fee</span></p><br />
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col text-center">
+                                        <small><i>(Current Rate: <span class="ourSellRate"></span> USDJ / 1 TRX)</i></small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer glassPanel">
+                            <div class="container">
+                                <div id="approval" class="row" style="display: none;">
+                                    <div id="text" class="col text-center">
+                                        <a class="btn btn-block btn-warning btn-lg roundedCorners" onclick="approveBank()" role="button">APPROVAL REQUIRED</a><br />
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="col text-center">
+                                        <a id="sellTokensBtn" class="btn btn-lg btn-sell roundedCorners" onclick="bankSell()" role="button">SELL</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col text-center">
+                    <div class="card glassPanel roundedCorners">
+                        <div class="card-body">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col text-center">
+                                        <small><i>A 2% processing fee is applied to all exchanges of USDJ/TRX. Fees are subject to change at the Pool Owner&apos;s sole discretion.</i></small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+        </div>
+        
+        <footer class="py-5 px-5 glassPanel rcTop text-white">
+            <div class="row">
+                <div class="col text-center">
+                    <b>The Fine Print</b>
+                    <small class="d-block mb-3 text-muted">
+                        FnTrade, its connected Smart Contract and its dependencies &amp; productions are provided on an &quot;as-is&quot; basis, with zero guarantee of bug-free operation.<br />
+                        Only use this Dapp if you can trust its code - Developers, maintainers, contributors, participants or representatives will <b>NOT</b> be held responsible<br />
+                        for losses resulting in any action taken by you, involving the use or activation of this Dapp, Smart Contract or its functions.
+                    </small>
+                </div>
+            </div>
+        </footer>
+        
+        <!-- Bottom Nav -->
+        <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark" style="background-color: rgba(0,0,0,1);">
+            <ul class="navbar-nav mr-auto ml-auto">
+                <script src="https://widgets.coingecko.com/coingecko-coin-price-marquee-widget.js"></script>
+                <coingecko-coin-price-marquee-widget  coin-ids="bitcoin,ethereum,ethereum-classic,universalcoin" currency="usd" background-color="#000000" locale="en" font-color="#ffffff"></coingecko-coin-price-marquee-widget>
+            </ul>
+        </nav>
+        
+        <!-- Bootstrap core JavaScript -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/popper.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/tronweb.js"></script>
+        
+        <script src="assets/dapps/exchange.js"></script>
+    </body>
+</html>

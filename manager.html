@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="FunctionDEX">
+        <meta name="author" content="Mr Function">
+        <title>FnTrade | DeFi on TRON</title>
+
+        <!-- Core CSS -->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/custom.css">
+
+        <!-- FontAwesome -->
+        <script src="https://kit.fontawesome.com/f352960784.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body class="text-white">
+        <nav class="navbar navbar-expand-lg navbar-dark blackNavbar fixed-top">
+            <a class="navbar-brand" href="index.html"><img src="assets/img/logo.png" width="25px" height="25px" class="rounded-circle" /> FunctionIsland</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarColor03">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"><a class="nav-link" href="token.html"><span><i class="fas fa-coins text-white"></i> TOKEN</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="divs.html"><span><i class="fas fa-hand-holding-usd text-white"></i> D1VS</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="exchange.html"><span><i class="fas fa-random text-white"></i> EXCHANGE</span></a></li>
+                </ul>
+                
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="https://tronscan.org/#/contract/TAEeGcFq2ACNbKHpmL55pJktt6qfWeZ1Uq" target="_blank"><i class="fas fa-search-dollar text-white"></i> <span>Contract</span></a></li>
+                </ul>
+            </div>
+        </nav>
+        <br />
+        <br />
+        <br />
+        
+        <div class="container">
+            <div class="row jumbotron glassPanel">
+                <div class="container">
+                    <div class="row text-center">
+                        <div class="col text-center">
+                            <img src="assets/img/logo.png" width="80px" height="80px" class="rounded-circle" />
+                            <h1 class="text-white">Exchange is <span id="operationStatus"></span></h1>
+                            <p class="text-muted">Stablecoin Exchange Interface</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="container">
+                    <div class="row jumbotron glassPanel whiteBorder roundedCorners">
+                        <div class="col text-center">
+                            <h3>
+                                <span class="text-danger"><span id="trx-balance">0</span> TRX</span><br />
+                                <span class="text-primary"><span id="tkn-balance">0</span> USDJ</span>
+                            </h3>
+                            <p>Current Liquidity</p>
+                        </div>
+                        
+                        <div class="col text-center">
+                            <h3>
+                                <span class="text-white"><span id="liquidityContributed"></span> USD in</span><br />
+                                <span class="text-white"><span id="returnsPaid"></span> USD out</span>
+                            </h3>
+                            <p>Total Value Handled</p>
+                        </div>
+                        
+                        <div class="col text-center">
+                            <h3>
+                                <span class="fee-percentage"></span> of TRX<br />
+                                <span class="fee-percentage"></span> of USDJ
+                            </h3>
+                            <p class="text-white">Profit Margin</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col text-center">
+                    <p><span id="tx-readout"></span></p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card glassPanel">
+                        <div class="card-header glassPanel">Manage TRX</div>
+                        <div class="card-body">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col text-left">
+                                        <h4 class="text-white">Deposit TRX</h4>
+                                        <input id="trx-deposit" type="text" placeholder="TRX to Deposit" class="form-control roundedCorners">
+                                        <br />
+                                        <button type="button" class="btn btn-block btn-md btn-success text-white roundedCorners" onclick="depositTRX()">Deposit TRX</button>
+                                    </div>
+
+                                    <div class="col text-left">
+                                        <h4 class="text-white">Withdraw TRX</h4>
+                                        <input id="trx-withdraw" type="text" placeholder="TRX to Withdraw" class="form-control roundedCorners">
+                                        <br />
+                                        <button type="button" class="btn btn-block btn-md btn-danger text-white roundedCorners" onclick="withdrawTRX()">Withdraw TRX</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="card glassPanel">
+                        <div class="card-header glassPanel">Manage USDJ</div>
+                        <div class="card-body">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col text-left">
+                                        <h4 class="text-white">Deposit USDJ</h4>
+                                        <input id="token-deposit" type="text" placeholder="USDJ to Deposit" class="form-control roundedCorners">
+                                        <br />
+                                        <button type="button" class="btn btn-block btn-md btn-success text-white roundedCorners" onclick="depositUSDJ()">Deposit USDJ</button>
+                                    </div>
+
+                                    <div class="col text-left">
+                                        <h4 class="text-white">Withdraw USDJ</h4>
+                                        <input id="token-withdraw" type="text" placeholder="USDJ to Withdraw" class="form-control roundedCorners">
+                                        <br />
+                                        <button type="button" class="btn btn-block btn-md btn-danger text-white roundedCorners" onclick="withdrawUSDJ()">Withdraw USDJ</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+        </div>
+
+        <footer class="py-5 px-5 glassPanel rcTop text-white">
+            <div class="row">
+                <div class="col text-center">
+                    <b>The Fine Print</b>
+                    <small class="d-block mb-3 text-muted">
+                        FnTrade, its connected Smart Contract and its dependencies &amp; productions are provided on an &quot;as-is&quot; basis, with zero guarantee of bug-free operation.<br />
+                        Only use this Dapp if you can trust its code - Developers, maintainers, contributors, participants or representatives will <b>NOT</b> be held responsible<br />
+                        for losses resulting in any action taken by you, involving the use or activation of this Dapp, Smart Contract or its functions.
+                    </small>
+                </div>
+            </div>
+        </footer>
+        
+        <!-- Bottom Nav -->
+        <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark" style="background-color: rgba(0,0,0,1);">
+            <ul class="navbar-nav mr-auto ml-auto">
+                <script src="https://widgets.coingecko.com/coingecko-coin-price-marquee-widget.js"></script>
+                <coingecko-coin-price-marquee-widget  coin-ids="bitcoin,ethereum,ethereum-classic,universalcoin" currency="usd" background-color="#000000" locale="en" font-color="#ffffff"></coingecko-coin-price-marquee-widget>
+            </ul>
+        </nav>
+        
+        <!-- Bootstrap core JavaScript -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/popper.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        
+        <script src="assets/dapps/manager.js"></script>
+    </body>
+</html>

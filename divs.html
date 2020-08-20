@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en" data-react-helmet="lang">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="FunctionDEX">
+        <meta name="author" content="Mr Function">
+        <title>Function Island | Vault</title>
+
+        <!-- Core CSS -->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/custom.css">
+
+        <!-- FontAwesome -->
+        <script src="https://kit.fontawesome.com/f352960784.js" crossorigin="anonymous"></script>
+    </head>
+    
+    <body class="text-white">
+        <nav class="navbar navbar-expand-lg navbar-dark blackNavbar fixed-top">
+            <a class="navbar-brand" href="index.html"><img src="assets/img/logo.png" width="25px" height="25px" class="rounded-circle" /> FunctionIsland</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarColor03">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"><a class="nav-link" href="token.html"><span><i class="fas fa-coins text-white"></i> TOKEN</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="divs.html"><span><i class="fas fa-hand-holding-usd text-white"></i> D1VS</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="exchange.html"><span><i class="fas fa-random text-white"></i> EXCHANGE</span></a></li>
+                </ul>
+                
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="https://tronscan.org/#/contract/TAEeGcFq2ACNbKHpmL55pJktt6qfWeZ1Uq" target="_blank"><i class="fas fa-search-dollar text-white"></i> <span>Contract</span></a></li>
+                </ul>
+            </div>
+        </nav>
+        <br />
+        <br />
+        <br />
+        
+        <div class="container" id="root">
+            <br />
+            
+            <div class="row jumbotron glassPanel">
+                <div class="container">
+                    <div class="row text-center">
+                        <div class="col text-center">
+                            <img src="assets/img/logo.png" width="80px" height="80px" class="rounded-circle" />
+                            <h1 class="text-white">Function Island</h1>
+                            <p class="text-muted">Hold DIVS and Earn Dividends</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card glassPanel">
+                        <div class="card-header glassPanel">My DIVS</div>
+                        <div class="card-body">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col text-center">
+                                        <h5><span class="user-token-balance text-primary">0.00000000</span> DIVS</h5>
+                                        <p><span id="user-trx-balance" class="text-danger">0.00000000</span> TRX / $<span id="user-usd-balance" class="text-success">0.00</span> USD</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer glassPanel">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col text-center">
+                                        <a class="btn btn-block btn-primary roundedCorners" href="#">View on TronScan</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="card glassPanel">
+                        <div class="card-header glassPanel">My DIVS</div>
+                        <div class="card-body">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col text-center">
+                                        <h5 class="text-primary"><span class="user-dividends">0.00000000</span> TRX</h5>
+                                        <p>My Dividends</p>
+                                    </div>
+                                    
+                                    <div class="col text-center">
+                                        <h5 class="text-primary">+ &#36;<span id="user-dividends-usd" class="text-primary">0.00</span> USD</h5>
+                                        <p>Growth on Reinvest</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer glassPanel">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col text-center">
+                                        <button class="btn btn-block btn-primary btn-reinvest roundedCorners"><b><i class="fas fa-recycle"></i> +<span id="user-reinvest">0.00</span> DIVS</b></button>
+                                    </div>
+                                    
+                                    <div class="col text-center">
+                                        <button class="btn btn-block btn-dark btn-withdraw roundedCorners"><i class="fas fa-hand-holding-usd"></i> Withdraw</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card glassPanel text-left">
+                        <div class="card-header glassPanel">Buy DIVS</div>
+                        <div class="card-body">
+                            <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                    <small>Current DIVS Price:</small>
+                                    <h1 class="text-white"><span class="text-primary"><span id="rate-to-buy">0</span> TRX</span></h1>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col text-center">
+                                    <input type="text" class="form-control buy-input" placeholder="TRX to spend" /><br />
+                                    <input type="text" class="form-control token-input-buy" readonly="" value="0.00000000"><br />
+                                    <small>Every DIVS purchase incurs a 10&#37; Dividend Fee.</small>
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+                        </div>
+                        <div class="card-footer glassPanel">
+                            <div class="container">
+                                <div class="row">
+                                    <button class="btn btn-block btn-lg btn-primary btn-buy buy-token-button roundedCorners">Buy DIVS</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="card glassPanel text-left">
+                        <div class="card-header glassPanel">Sell DIVS</div>
+                        <div class="card-body">
+                            <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                    <small>Current DIVS Value:</small>
+                                    <h1 class="text-white"><span class="text-danger"><span id="rate-to-sell">0</span> TRX</span></h1>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col text-center">
+                                    <input type="text" class="form-control sell-input" placeholder="Amount of DIVS"><br />
+                                    <input type="text" class="form-control trx-input-sell" readonly="" value="0.00000000"><br />
+                                    <small>Every DIVS sale incurs a 10&#37; Dividend Fee.</small>
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+                        </div>
+                        <div class="card-footer glassPanel">
+                            <div class="container">
+                                <div class="row">
+                                    <button class="btn btn-block btn-lg btn-danger btn-buy sell-token-button roundedCorners">Sell DIVS</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                </div>
+            </div>
+            
+            <div class="row jumbotron glassPanel text-dark">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 text-left">
+                            <h3 class="text-primary">Here&apos;s your Link...</h3>
+                            <input id="ref-url" class="form-control text-secondary" value="" readonly="" />
+                            <small class="text-muted">When others use your link, you get a commission!</small>
+                            <br />
+                            <br />
+                        </div>
+                        <br />
+                        
+                        <div class="col-md-6 text-center">
+                            <div class="row">
+                                <div class="col text-center">
+                                    <br />
+                                    <h5 class="text-danger"><span id="contract-trx-balance">0</span> TRX</h5>
+                                    <small>Contract Holdings</small>
+                                </div>
+                                
+                                <div class="col text-center">
+                                    <br />
+                                    <h5 class="text-primary"><span style="display: inline" id="contract-token-balance">0</span> DIVS</h5>
+                                    <small>Total Supply</small>
+                                </div>
+                            </div>
+                        </div>
+                        <br />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+        
+        <footer class="py-5 px-5 glassPanel rcTop text-white">
+            <div class="row">
+                <div class="col text-center">
+                    <b>The Fine Print</b>
+                    <small class="d-block mb-3 text-muted">
+                        FnTrade, its connected Smart Contract and its dependencies &amp; productions are provided on an &quot;as-is&quot; basis, with zero guarantee of bug-free operation.<br />
+                        Only use this Dapp if you can trust its code - Developers, maintainers, contributors, participants or representatives will <b>NOT</b> be held responsible<br />
+                        for losses resulting in any action taken by you, involving the use or activation of this Dapp, Smart Contract or its functions.
+                    </small>
+                </div>
+            </div>
+        </footer>
+        
+        <!-- Bottom Nav -->
+        <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark" style="background-color: rgba(0,0,0,1);">
+            <ul class="navbar-nav mr-auto ml-auto">
+                <script src="https://widgets.coingecko.com/coingecko-coin-price-marquee-widget.js"></script>
+                <coingecko-coin-price-marquee-widget  coin-ids="bitcoin,ethereum,ethereum-classic,universalcoin" currency="usd" background-color="#000000" locale="en" font-color="#ffffff"></coingecko-coin-price-marquee-widget>
+            </ul>
+        </nav>
+
+        <div class="modal fade" tabindex="-1" id="instructions-modal" data-backdrop="static" data-keyboard="false">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Tutorial</h5>
+                        <button type="button" class="close"><span aria-hidden="true">×</span></button>
+                    </div>
+                    <div class="modal-body"></div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <br />
+        <br />
+        
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/popper.min.js"></script>
+		<script src="assets/js/bootstrap.min.js"></script>
+        
+		<script src="assets/dapps/hourglass.js"></script>
+        
+	   <script type="text/javascript">
+			function getCookie(name) {
+				var dc = document.cookie;
+				var prefix = name + "=";
+				var begin = dc.indexOf("; " + prefix);
+
+				if (begin == -1) {
+				  begin = dc.indexOf(prefix);
+				  if (begin != 0) return null;
+				}
+				else
+				{
+					begin += 2;
+					var end = document.cookie.indexOf(";", begin);
+					if (end == -1) {
+					end = dc.length;
+				  }
+				}
+
+				return decodeURI(dc.substring(begin + prefix.length, end));
+			}
+
+			var url_string = window.location.href;
+			var url = new URL(url_string);
+			var theCookie = "masternode=" + url.searchParams.get("masternode");
+
+			if (url.searchParams.get("masternode") !== null) {
+			  var toSet = "masternode=" + url.searchParams.get("masternode");
+			  document.cookie=theCookie;
+			} else {
+
+			  var refCookie = getCookie("masternode");
+
+			  if (refCookie === null) {
+				console.log("Ref cookie was null. Setting to default.");
+				document.cookie = "masternode=TRC1hwc1JaBL9kGp6wFYYCXUF4FVinpqbV";
+			  } else {
+				// do nothing if the cookie is already set and there is no new mnode link
+			  }
+			}
+		</script>
+   </body>
+</html>

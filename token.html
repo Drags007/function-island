@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="FunctionDEX">
+        <meta name="author" content="Mr Function">
+        <title>Function Island | Home</title>
+
+        <!-- Core CSS -->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/custom.css">
+
+        <!-- FontAwesome -->
+        <script src="https://kit.fontawesome.com/f352960784.js" crossorigin="anonymous"></script>
+    </head>
+    
+    <body class="text-white">
+        <nav class="navbar navbar-expand-lg navbar-dark blackNavbar fixed-top">
+            <a class="navbar-brand" href="index.html"><img src="assets/img/logo.png" width="25px" height="25px" class="rounded-circle" /> FunctionIsland</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarColor03">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"><a class="nav-link" href="token.html"><span><i class="fas fa-coins text-white"></i> TOKEN</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="divs.html"><span><i class="fas fa-hand-holding-usd text-white"></i> D1VS</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="exchange.html"><span><i class="fas fa-random text-white"></i> EXCHANGE</span></a></li>
+                </ul>
+                
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="https://tronscan.org/#/contract/TAEeGcFq2ACNbKHpmL55pJktt6qfWeZ1Uq" target="_blank"><i class="fas fa-search-dollar text-white"></i> <span>Contract</span></a></li>
+                </ul>
+            </div>
+        </nav>
+        <br />
+        <br />
+        <br />
+        
+        <div class="container">
+            <br />
+            
+            <div class="row jumbotron glassPanel">
+                <div class="container">
+                    <div class="row text-center">
+                        <div class="col text-center">
+                            <img src="assets/img/logo.png" width="80px" height="80px" class="rounded-circle" />
+                            <h1 class="text-white">Function Island</h1>
+                            <p class="text-muted">Staking Interface for FUNC Token</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                    
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card glassPanel">
+                        <div class="card-header glassPanel">My FUNC</div>
+                        <div class="card-body">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col text-center">
+                                        <h3 class="text-white"><i class="fas fa-fire text-white"></i> <span class="myTokens">-</span></h3>
+                                        <p class="text-white">Your FUNC Balance</p>
+                                    </div>
+
+                                    <div class="col text-center">
+                                        <h3 class="text-white">
+                                            <i class="fas fa-fire text-white"></i> <span id="myDividends">-</span>
+                                        </h3>
+                                        <p class="text-light">Your Earnings</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer glassPanel">
+                            <div class="row">        
+                                <div class="col text-center">
+                                    <button type="button" class="btn btn-block btn-md btn-warning roundedCorners" id="withdraw"><i class="fas fa-hand-holding-usd"></i> Withdraw Earnings</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                </div>
+                        
+                        <div class="col-md-6">
+                            <div class="card glassPanel">
+                                <div class="card-header glassPanel">Token Stats</div>
+                                <div class="card-body text-white">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col text-center">
+                                                <h3 class="text-white"><i class="fas fa-fire text-white"></i> <span class="myFrozen">-</span></h3>
+                                                <p class="text-white">Your Frozen FUNC</p>
+                                            </div>
+                                            
+                                            <div class="col text-center">
+                                                <h3 class="text-danger"><i class="fas fa-fire text-white"></i> <span id="totalFrozen">-</span></h3>
+                                                <p class="text-light">Total Frozen</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer glassPanel">
+                                    <div class="row">
+                                        <div class="col text-center">
+                                            <a class="btn btn-block btn-md btn-success text-dark roundedCorners" href="#" data-toggle="modal" data-target="#freezeModal"><i class="fas fa-lock"></i> Freeze</a>
+                                        </div>
+
+                                        <div class="col text-center">
+                                            <a class="btn btn-block btn-md btn-danger roundedCorners" href="#" data-toggle="modal" data-target="#unfreezeModal"><i class="fas fa-lock-open"></i> Unfreeze</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
+                        </div>
+                    </div>
+                    <br />
+        </div>
+        
+        <footer class="py-5 px-5 glassPanel rcTop text-white">
+            <div class="row">
+                <div class="col text-center">
+                    <b>The Fine Print</b>
+                    <small class="d-block mb-3 text-muted">
+                        FnTrade, its connected Smart Contract and its dependencies &amp; productions are provided on an &quot;as-is&quot; basis, with zero guarantee of bug-free operation.<br />
+                        Only use this Dapp if you can trust its code - Developers, maintainers, contributors, participants or representatives will <b>NOT</b> be held responsible<br />
+                        for losses resulting in any action taken by you, involving the use or activation of this Dapp, Smart Contract or its functions.
+                    </small>
+                </div>
+            </div>
+        </footer>
+        
+        <!-- Bottom Nav -->
+        <nav class="navbar fixed-bottom navbar-expand-sm navbar-dark" style="background-color: rgba(0,0,0,1);">
+            <ul class="navbar-nav mr-auto ml-auto">
+                <script src="https://widgets.coingecko.com/coingecko-coin-price-marquee-widget.js"></script>
+                <coingecko-coin-price-marquee-widget  coin-ids="bitcoin,ethereum,ethereum-classic,universalcoin" currency="usd" background-color="#000000" locale="en" font-color="#ffffff"></coingecko-coin-price-marquee-widget>
+            </ul>
+        </nav>
+        
+        <!-- Modals -->
+        <!-- Freeze Modal -->
+        <div class="modal" id="freezeModal">
+            <div class="modal-dialog">
+                <div class="modal-content glassPanel roundedCorners greenBorder">
+                    <div class="modal-header">
+                        <h4 class="modal-title text-success">Freeze FUNC</h4>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col text-center">
+                                    <h3 class="text-white"><span class="myTokens">-</span> FUNC</h3>
+                                    <small class="text-white">Your Available Balance</small>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col text-center">
+                                    <div class="input-group">
+                                        <input type="number" class="form-control roundedCorners" placeholder="Amount of tokens to freeze" id="freezeAmount">
+                                    </div>
+                                    <div class="d-flex align-items-center flex-wrap mt-3">
+                                        <a class="btn btn-block btn-sm btn-success text-dark roundedCorners" href="" id="freeze">Freeze</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col text-center">
+                                    <small class="text-white text-center">You need at least 1000 FUNC to begin freezing!</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer text-white">
+                        <button type="button" class="btn btn-danger roundedCorners" data-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        
+        <!-- Unfreeze Modal -->
+        <div class="modal" id="unfreezeModal">
+            <div class="modal-dialog">
+                <div class="modal-content glassPanel roundedCorners redBorder">
+                    <div class="modal-header">
+                        <h4 class="modal-title text-warning">Unfreeze FUNC</h4>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col text-center">
+                                    <h3 class="text-white"><span class="myFrozen">-</span> FUNC</h3>
+                                    <small class="text-white">Your Frozen FUNC</small>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col text-center">
+                                    <div class="input-group">
+                                        <input type="number" class="form-control roundedCorners" placeholder="Amount of tokens to unfreeze" id="unfreezeAmount">
+                                    </div>
+                                    <div class="d-flex align-items-center flex-wrap mt-3">
+                                        <a class="btn btn-block btn-sm btn-warning roundedCorners" href="" id="unfreeze">Unfreeze</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col text-center">
+                                    <small class="text-white text-center">When you unfreeze, your will incur a 5% Tax, which is distributed among those who still have frozen FUNC.</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer text-white">
+                        <button type="button" class="btn btn-danger roundedCorners" data-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        
+        <!-- Transfer Modal -->
+        <div class="modal" id="transferModal">
+            <div class="modal-dialog">
+                <div class="modal-content glassPanel roundedCorners blueBorder">
+                    <div class="modal-header">
+                        <h4 class="modal-title text-primary">Transfer FUNC</h4>
+                    </div>
+
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col text-center">
+                                    <h3 class="text-white"><span class="myTokens">-</span> FUNC</h3>
+                                    <small class="text-white">Your Available Balance</small>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col text-center">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control roundedCorners mb-2" placeholder="Receiver Address" id="transferReceiver">
+                                    </div>
+                                    <div class="input-group">
+                                        <input type="number" class="form-control roundedCorners" placeholder="Amount of tokens to send" id="transferAmount">
+                                    </div>
+                                    <div class="d-flex align-items-center flex-wrap mt-3">
+                                        <a class="btn btn-block btn-sm btn-primary roundedCorners" href="" id="transfer">Transfer</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col text-center">
+                                    <small class="text-white text-center">
+                                        When you transfer FUNC to another address, you will incur a 5% tax.<br />
+                                        50% of the tax is burned, and the other 50% is distributed among those who have frozen FUNC.
+                                    </small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer text-white">
+                        <button type="button" class="btn btn-danger roundedCorners" data-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+                
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/popper.min.js"></script>
+		<script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/dark-mode-switch.min.js"></script>
+        
+		<script src="assets/dapps/staking.js"></script>
+    </body>
+</html>

@@ -1,0 +1,29 @@
+body {
+    background: linear-gradient(-45deg, rgba(0,0,0,1) 0%, rgba(115,62,139,1) 100%);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+}
+
+.dapp {
+    z-index: 1;
+}
+
+.glassPanel {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.blackNavbar {
+    background-color: #000;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
