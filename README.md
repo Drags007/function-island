@@ -1,6 +1,8 @@
 # Function Island
 Function Island | Open Source Dapps
 
+![Function Island Homepage](/screenshots/home_1.png)
+
 ## Introduction
 Function Island is a collection of Open Source Dapps, with Smart Contracts deployed on the TRON network. It is a "just-for-fun" platform, aiming to make a fun experience of cryptocurrency trading and management. Anyone is able to use the software properly by installing a TRON Blockchain Wallet Extension or Dapp Browser, such as TronLink or TronWallet.me.
 
