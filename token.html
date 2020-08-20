@@ -47,7 +47,7 @@
                         <div class="col text-center">
                             <img src="assets/img/logo.png" width="80px" height="80px" class="rounded-circle" />
                             <h1 class="text-white">Function Island</h1>
-                            <p class="text-muted">Staking Interface for FUNC Token</p>
+                            <p class="text-white">Staking Interface for FUNC Token</p>
                         </div>
                     </div>
                 </div>
@@ -75,7 +75,10 @@
                             </div>
                         </div>
                         <div class="card-footer glassPanel">
-                            <div class="row">        
+                            <div class="row">
+                                <div class="col text-center">
+                                    <a class="btn btn-block btn-md btn-info text-light roundedCorners" href="#" data-toggle="modal" data-target="#transferModal"><i class="fas fa-arrow-right"></i> Transfer FUNC</a>
+                                </div>
                                 <div class="col text-center">
                                     <button type="button" class="btn btn-block btn-md btn-warning roundedCorners" id="withdraw"><i class="fas fa-hand-holding-usd"></i> Withdraw Earnings</button>
                                 </div>
@@ -93,12 +96,12 @@
                                         <div class="row">
                                             <div class="col text-center">
                                                 <h3 class="text-white"><i class="fas fa-fire text-white"></i> <span class="myFrozen">-</span></h3>
-                                                <p class="text-white">Your Frozen FUNC</p>
+                                                <p class="text-white">Your Staked FUNC</p>
                                             </div>
                                             
                                             <div class="col text-center">
-                                                <h3 class="text-danger"><i class="fas fa-fire text-white"></i> <span id="totalFrozen">-</span></h3>
-                                                <p class="text-light">Total Frozen</p>
+                                                <h3 class="text-white"><i class="fas fa-fire text-white"></i> <span id="totalFrozen">-</span></h3>
+                                                <p class="text-light">Total Staked</p>
                                             </div>
                                         </div>
                                     </div>
@@ -106,11 +109,11 @@
                                 <div class="card-footer glassPanel">
                                     <div class="row">
                                         <div class="col text-center">
-                                            <a class="btn btn-block btn-md btn-success text-dark roundedCorners" href="#" data-toggle="modal" data-target="#freezeModal"><i class="fas fa-lock"></i> Freeze</a>
+                                            <a class="btn btn-block btn-md btn-success text-light roundedCorners" href="#" data-toggle="modal" data-target="#freezeModal"><i class="fas fa-lock"></i> Stake</a>
                                         </div>
 
                                         <div class="col text-center">
-                                            <a class="btn btn-block btn-md btn-danger roundedCorners" href="#" data-toggle="modal" data-target="#unfreezeModal"><i class="fas fa-lock-open"></i> Unfreeze</a>
+                                            <a class="btn btn-block btn-md btn-danger roundedCorners" href="#" data-toggle="modal" data-target="#unfreezeModal"><i class="fas fa-lock-open"></i> Unstake</a>
                                         </div>
                                     </div>
                                 </div>
@@ -125,8 +128,8 @@
             <div class="row">
                 <div class="col text-center">
                     <b>The Fine Print</b>
-                    <small class="d-block mb-3 text-muted">
-                        FnTrade, its connected Smart Contract and its dependencies &amp; productions are provided on an &quot;as-is&quot; basis, with zero guarantee of bug-free operation.<br />
+                    <small class="d-block mb-3 text-white">
+                        Function Island, its connected Smart Contract and its dependencies &amp; productions are provided on an &quot;as-is&quot; basis, with zero guarantee of bug-free operation.<br />
                         Only use this Dapp if you can trust its code - Developers, maintainers, contributors, participants or representatives will <b>NOT</b> be held responsible<br />
                         for losses resulting in any action taken by you, involving the use or activation of this Dapp, Smart Contract or its functions.
                     </small>
@@ -142,13 +145,16 @@
             </ul>
         </nav>
         
+        <br />
+        <br />
+        
         <!-- Modals -->
         <!-- Freeze Modal -->
         <div class="modal" id="freezeModal">
             <div class="modal-dialog">
-                <div class="modal-content glassPanel roundedCorners greenBorder">
+                <div class="modal-content bg-dark roundedCorners greenBorder">
                     <div class="modal-header">
-                        <h4 class="modal-title text-success">Freeze FUNC</h4>
+                        <h4 class="modal-title text-success">Stake FUNC</h4>
                     </div>
 
                     <div class="modal-body">
@@ -163,17 +169,17 @@
                             <div class="row">
                                 <div class="col text-center">
                                     <div class="input-group">
-                                        <input type="number" class="form-control roundedCorners" placeholder="Amount of tokens to freeze" id="freezeAmount">
+                                        <input type="number" class="form-control roundedCorners" placeholder="Amount of tokens to Stake" id="freezeAmount">
                                     </div>
                                     <div class="d-flex align-items-center flex-wrap mt-3">
-                                        <a class="btn btn-block btn-sm btn-success text-dark roundedCorners" href="" id="freeze">Freeze</a>
+                                        <a class="btn btn-block btn-sm btn-success text-dark roundedCorners" href="" id="freeze">Stake</a>
                                     </div>
                                 </div>
                             </div>
                             
                             <div class="row">
                                 <div class="col text-center">
-                                    <small class="text-white text-center">You need at least 1000 FUNC to begin freezing!</small>
+                                    <small class="text-white text-center">You need at least 1000 FUNC to begin staking!</small>
                                 </div>
                             </div>
                         </div>
@@ -190,9 +196,9 @@
         <!-- Unfreeze Modal -->
         <div class="modal" id="unfreezeModal">
             <div class="modal-dialog">
-                <div class="modal-content glassPanel roundedCorners redBorder">
+                <div class="modal-content bg-dark roundedCorners redBorder">
                     <div class="modal-header">
-                        <h4 class="modal-title text-warning">Unfreeze FUNC</h4>
+                        <h4 class="modal-title text-warning">Unstake FUNC</h4>
                     </div>
 
                     <div class="modal-body">
@@ -200,7 +206,7 @@
                             <div class="row">
                                 <div class="col text-center">
                                     <h3 class="text-white"><span class="myFrozen">-</span> FUNC</h3>
-                                    <small class="text-white">Your Frozen FUNC</small>
+                                    <small class="text-white">Your Staked FUNC</small>
                                 </div>
                             </div>
                             
@@ -210,13 +216,13 @@
                                         <input type="number" class="form-control roundedCorners" placeholder="Amount of tokens to unfreeze" id="unfreezeAmount">
                                     </div>
                                     <div class="d-flex align-items-center flex-wrap mt-3">
-                                        <a class="btn btn-block btn-sm btn-warning roundedCorners" href="" id="unfreeze">Unfreeze</a>
+                                        <a class="btn btn-block btn-sm btn-warning roundedCorners" href="" id="unfreeze">Unstake</a>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col text-center">
-                                    <small class="text-white text-center">When you unfreeze, your will incur a 5% Tax, which is distributed among those who still have frozen FUNC.</small>
+                                    <small class="text-white text-center">When you unstake, your will incur a 1% Tax, which is distributed among those who still have staked FUNC.</small>
                                 </div>
                             </div>
                         </div>
@@ -233,7 +239,7 @@
         <!-- Transfer Modal -->
         <div class="modal" id="transferModal">
             <div class="modal-dialog">
-                <div class="modal-content glassPanel roundedCorners blueBorder">
+                <div class="modal-content bg-dark roundedCorners blueBorder">
                     <div class="modal-header">
                         <h4 class="modal-title text-primary">Transfer FUNC</h4>
                     </div>
@@ -264,8 +270,8 @@
                             <div class="row">
                                 <div class="col text-center">
                                     <small class="text-white text-center">
-                                        When you transfer FUNC to another address, you will incur a 5% tax.<br />
-                                        50% of the tax is burned, and the other 50% is distributed among those who have frozen FUNC.
+                                        When you transfer FUNC to another address, you will incur a 1% tax.<br />
+                                        50% of the tax is burned, and the other 50% is distributed among those who have staked FUNC.
                                     </small>
                                 </div>
                             </div>
@@ -283,7 +289,6 @@
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/js/popper.min.js"></script>
 		<script src="assets/js/bootstrap.min.js"></script>
-        <script src="assets/js/dark-mode-switch.min.js"></script>
         
 		<script src="assets/dapps/staking.js"></script>
     </body>

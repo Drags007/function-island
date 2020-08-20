@@ -53,7 +53,7 @@ async function interfaceLoop() {
         if (lastModifiedBuy == 'trx') {updateBankBuy(0)} else {updateBankBuy(1)}
         if (lastModifiedSell == 'token') {updateBankSell(0)} else {updateBankSell(1)}
 
-        $('.trxBalBuy').text((userTrx).toFixed(2) + ' TRX')
+        $('#trxBalBuy').text((userTrx).toFixed(2) + ' TRX')
         $('.USDJBalBuy').text(formatDollas(userTokens))
         $('.trxBalSell').text((userTrx).toFixed(2) + ' TRX')
         $('.USDJBalSell').text(formatDollas(userTokens))
@@ -85,20 +85,16 @@ function checkValidBuy(amount) {
     if (amount > userTrx) {
         $('#buyTokensBtn').text('INSUFFICIENT FUNDS')
         document.getElementById("buyTokensBtn").className = "btn btn-block btn-lg btn-dark roundedCorners text-warning"; 
-        $('#trxBuy').css('color', '#ff3912')
         validBuy = false
-    } else {
-        $('#trxBuy').css('color', '#799fff')
     }
+    
     let received = getTrxBuy(amount)
     if ((received * 1e18) > Number(bankData.tokenBal)) {
         $('#buyTokensBtn').text('EXCHANGE BALANCE TOO LOW')
         document.getElementById("buyTokensBtn").className = "btn btn-block btn-lg btn-dark roundedCorners text-danger"; 
-        $('#availUsdBuy').css('color', '#ff3912')
         validBuy = false
-    } else {
-        $('#availUsdBuy').css('color', '#00c700')
     }
+    
     if (!validBuy) {
         $('#buyTokensBtn').css("opacity", ".5")
     } else {

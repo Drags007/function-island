@@ -47,7 +47,7 @@
                         <div class="col text-center">
                             <img src="assets/img/logo.png" width="80px" height="80px" class="rounded-circle" />
                             <h1 class="text-white">Function Island</h1>
-                            <p class="text-muted">Hold DIVS and Earn Dividends</p>
+                            <p class="text-white">Hold DIVS and Earn Dividends</p>
                         </div>
                     </div>
                 </div>
@@ -61,8 +61,11 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="col text-center">
-                                        <h5><span class="user-token-balance text-primary">0.00000000</span> DIVS</h5>
-                                        <p><span id="user-trx-balance" class="text-danger">0.00000000</span> TRX / $<span id="user-usd-balance" class="text-success">0.00</span> USD</p>
+                                        <h5><span class="user-token-balance text-white">0.00000000</span> DIVS</h5>
+                                        <p>
+                                            <span class="badge badge-pill badge-danger"><span id="user-trx-balance">0.00000000</span> TRX</span>
+                                             / <span class="badge badge-pill badge-light">$<span id="user-usd-balance">0.00</span> USD</span>
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -87,12 +90,12 @@
                             <div class="container">
                                 <div class="row">
                                     <div class="col text-center">
-                                        <h5 class="text-primary"><span class="user-dividends">0.00000000</span> TRX</h5>
+                                        <h5 class="text-white"><span class="user-dividends">0.00000000</span> TRX</h5>
                                         <p>My Dividends</p>
                                     </div>
                                     
                                     <div class="col text-center">
-                                        <h5 class="text-primary">+ &#36;<span id="user-dividends-usd" class="text-primary">0.00</span> USD</h5>
+                                        <h5 class="text-white">+ &#36;<span id="user-dividends-usd" class="text-white">0.00</span> USD</h5>
                                         <p>Growth on Reinvest</p>
                                     </div>
                                 </div>
@@ -125,7 +128,7 @@
                             <div class="row">
                                 <div class="col">
                                     <small>Current DIVS Price:</small>
-                                    <h1 class="text-white"><span class="text-primary"><span id="rate-to-buy">0</span> TRX</span></h1>
+                                    <h1 class="text-white"><span class="text-white"><span id="rate-to-buy">0</span> TRX</span></h1>
                                 </div>
                             </div>
                             
@@ -190,9 +193,9 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6 text-left">
-                            <h3 class="text-primary">Here&apos;s your Link...</h3>
+                            <h3 class="text-white">Here&apos;s your Link...</h3>
                             <input id="ref-url" class="form-control text-secondary" value="" readonly="" />
-                            <small class="text-muted">When others use your link, you get a commission!</small>
+                            <small class="text-white">When others use your link, you get a commission!</small>
                             <br />
                             <br />
                         </div>
@@ -202,14 +205,22 @@
                             <div class="row">
                                 <div class="col text-center">
                                     <br />
-                                    <h5 class="text-danger"><span id="contract-trx-balance">0</span> TRX</h5>
-                                    <small>Contract Holdings</small>
+                                    <h3 class="text-danger">
+                                        <span class="badge badge-pill badge-danger">
+                                            <span id="contract-trx-balance">0</span> TRX
+                                        </span>
+                                    </h3>
+                                    <p class="text-white">Contract Holdings</p>
                                 </div>
                                 
                                 <div class="col text-center">
                                     <br />
-                                    <h5 class="text-primary"><span style="display: inline" id="contract-token-balance">0</span> DIVS</h5>
-                                    <small>Total Supply</small>
+                                    <h3 class="text-white">
+                                        <span class="badge badge-pill badge-light">
+                                            <span style="display: inline" id="contract-token-balance">0</span> DIVS
+                                        </span>
+                                    </h3>
+                                    <p class="text-white">Total Supply</p>
                                 </div>
                             </div>
                         </div>
@@ -224,8 +235,8 @@
             <div class="row">
                 <div class="col text-center">
                     <b>The Fine Print</b>
-                    <small class="d-block mb-3 text-muted">
-                        FnTrade, its connected Smart Contract and its dependencies &amp; productions are provided on an &quot;as-is&quot; basis, with zero guarantee of bug-free operation.<br />
+                    <small class="d-block mb-3 text-white">
+                        Function Island, its connected Smart Contract and its dependencies &amp; productions are provided on an &quot;as-is&quot; basis, with zero guarantee of bug-free operation.<br />
                         Only use this Dapp if you can trust its code - Developers, maintainers, contributors, participants or representatives will <b>NOT</b> be held responsible<br />
                         for losses resulting in any action taken by you, involving the use or activation of this Dapp, Smart Contract or its functions.
                     </small>
@@ -252,7 +263,6 @@
                 </div>
             </div>
         </div>
-        <br />
         <br />
         <br />
         
