@@ -42,3 +42,15 @@ If you would like to help the development of Function Island with a donation ins
   - Rinon, TRX: TCheQUTzdeh8qcFS2E9ThhB8XZx2TjtQf8
   
  Please bear in mind that all donations are final - any cryptocurrencies received by these addresses will be used or spent as seen fit by the respective developer designated as owner of the address. No refunds will be issued for incorrect donation amounts.
+
+__DISCLAIMERS:__ 
+
+1: This repository, its hosted website, any and all of its contents are provided on an "as-is" basis.
+
+2: It is provided without *any warranty, or guarantee of being bug-free or error free*. 
+
+3: The core developers of this repo are not responsible for any bugs, known or unknown.
+
+4: You use this at your *own risk*! Do not use any funds you cannot afford to lose.
+
+***5: NOBODY WILL EVER BAIL YOU OUT. EVER.***
