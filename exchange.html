@@ -27,7 +27,7 @@
                     <li class="nav-item"><a class="nav-link" href="token.html"><span><i class="fas fa-coins text-white"></i> TOKEN</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="divs.html"><span><i class="fas fa-hand-holding-usd text-white"></i> D1VS</span></a></li>
                     <li class="nav-item"><a class="nav-link" href="exchange.html"><span><i class="fas fa-random text-white"></i> EXCHANGE</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="username.html"><span><i class="fas fa-user text-white"></i> USERNAME</span></a></li>
+                    
                 </ul>
                 
                 <ul class="navbar-nav ml-auto">
@@ -49,7 +49,12 @@
                         <div class="col text-center">
                             <img src="assets/img/logo.png" width="140px" height="140px" class="rounded-circle" />
                             <h1 class="text-white">Function Island</h1>
-                            <p class="text-white"><span class="arcTag">USDJ/TRX Exchange Interface</span></p>
+                            <p class="text-white">USDJ/TRX Exchange Interface</p>
+                            <p class="text-white">
+                                <span class="arcTag">
+                                    <a class="btn btn-block btn-md btn-info text-light roundedCorners" href="#" data-toggle="modal" data-target="#usernameModal"><i class="fas fa-arrow-right"></i> Register a Username</a>
+                                </span>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -234,6 +239,50 @@
                 <coingecko-coin-price-marquee-widget  coin-ids="bitcoin,ethereum,ethereum-classic,universalcoin" currency="usd" background-color="#000000" locale="en" font-color="#ffffff"></coingecko-coin-price-marquee-widget>
             </ul>
         </nav>
+        
+        <div class="modal" id="usernameModal">
+            <div class="modal-dialog">
+                <div class="modal-content bg-dark roundedCorners greenBorder">
+                    <div class="modal-header"><h4 class="modal-title text-success">Register a Username</h4></div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col text-left">
+                                    <h3 class="text-white"></h3>
+                                    <label class="text-white">Enter a name: </label>
+                                    <input type="text" name="newUsername" id="newUsername" onchange="checkAvailability()" class="form-control roundedCorners" placeholder="Enter your desired Username" />
+                                    <p class="text-white text-center"><b>Max. 12 Letters/numbers, no spaces! Choose carefully, as your Username cannot be changed!</b></p>
+                                    <br />
+                                    Username Available: <span id="availableStatus" class="text-white"></span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col text-center">
+                                    <button onclick="checkAvailability()" class="btn btn-block btn-md btn-warning roundedCorners">Check Availability</button><br />
+                                </div>
+                            </div>
+                            <div class="row">
+                                <h3 class="text-white">What is a Username?</h3>
+                                <p class="text-white">
+                                    Your username is your personal tag, across all of Function Island - the single piece of identity that is tied to your wallet address - your greatest online handle. Make it a good one!<br />
+                                    <br />
+                                    Registering an Username costs <b>10 TRX</b> - a small fee to prevent namesquatting, which is collected by the Core Developer Team for maintenance of the platform.
+                                </p>
+                            </div>
+                            <div id="registerButtonArea" class="row" style="display: none;">
+                                <div class="col text-center">
+                                    <button onclick="registerName()" class="btn btn-block btn-md btn-success roundedCorners">Register</button>
+                                </div>
+                            </div>
+                            <br />
+                        </div>
+                    </div>
+                    <div class="modal-footer text-white">
+                        <button type="button" class="btn btn-danger roundedCorners" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         
         <!-- Bootstrap core JavaScript -->
         <script src="assets/js/jquery.min.js"></script>

@@ -142,7 +142,7 @@ function updateUserInformation(){
         }).catch((error)=>{console.log(error)})
     }).catch((error)=>{console.log(error)});
     
-    $("#ref-url").val("https://functionisland.me/divs.html?masternode=" + tronWeb.defaultAddress.base58)
+    $("#ref-url").val("https://functionisland.xyz/divs.html?masternode=" + tronWeb.defaultAddress.base58)
 }
 
 function checkwallet(){
